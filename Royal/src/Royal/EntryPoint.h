@@ -10,6 +10,7 @@ int main(int argc, char** argv)
 	auto app = Royal::CreateApplication();
 	app->Run();
 	delete app;
+	//mhm
 }
 
 #endif

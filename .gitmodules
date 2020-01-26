@@ -1,0 +1,3 @@
+[submodule "Royal/vendor/spdlog"]
+	path = Royal/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git

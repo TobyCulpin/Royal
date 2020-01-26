@@ -4,6 +4,7 @@
 
 #include <stdio.h>
 #include "Royal/Application.h"
+#include "Royal/Log.h"
 
 //----Entry Point--------------------------------------------------------------------------------------------
 

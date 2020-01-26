@@ -9,10 +9,8 @@ int main(int argc, char** argv)
 
 	Royal::Log::Init();
 
-	RL_CORE_WARN("Initialized Log!");
-	int a = 5;
-	int b = 10;
-	RL_INFO("Initialized Log!  a = {1}", a, b);
+	RL_CORE_INFO("Initialized Log!");
+	RL_INFO("Initialized Log!");
 
 	printf("Royal Engine starting...");
 	auto app = Royal::CreateApplication();

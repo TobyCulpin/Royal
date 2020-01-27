@@ -4,6 +4,9 @@
     <Filter Include="Royal">
       <UniqueIdentifier>{2CC7090E-98DB-31BF-615D-D51ECD302EF0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Royal\Events">
+      <UniqueIdentifier>{90292A5D-7C8C-B901-2512-F2B711548584}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Royal.h" />
@@ -16,9 +19,22 @@
     <ClInclude Include="src\Royal\EntryPoint.h">
       <Filter>Royal</Filter>
     </ClInclude>
+    <ClInclude Include="src\Royal\Events\ApplicationEvent.h">
+      <Filter>Royal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Royal\Events\Event.h">
+      <Filter>Royal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Royal\Events\KeyEvent.h">
+      <Filter>Royal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Royal\Events\MouseEvent.h">
+      <Filter>Royal\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Royal\Log.h">
       <Filter>Royal</Filter>
     </ClInclude>
+    <ClInclude Include="src\rlpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Royal\Application.cpp">
@@ -27,5 +43,6 @@
     <ClCompile Include="src\Royal\Log.cpp">
       <Filter>Royal</Filter>
     </ClCompile>
+    <ClCompile Include="src\rlpch.cpp" />
   </ItemGroup>
 </Project>

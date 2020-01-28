@@ -1,3 +1,6 @@
 [submodule "Royal/vendor/spdlog"]
 	path = Royal/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "Royal/vendor/GLFW"]
+	path = Royal/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

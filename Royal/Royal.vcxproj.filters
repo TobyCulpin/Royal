@@ -35,6 +35,10 @@
       <Filter>Royal</Filter>
     </ClInclude>
     <ClInclude Include="src\rlpch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\Royal\Window.h">
+      <Filter>Royal</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Royal\Application.cpp">
@@ -44,5 +48,6 @@
       <Filter>Royal</Filter>
     </ClCompile>
     <ClCompile Include="src\rlpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

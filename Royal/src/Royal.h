@@ -2,8 +2,8 @@
 
 //For use by Royal applications
 
-#include <stdio.h>
 #include "Royal/Application.h"
+#include "Royal/Layer.h"
 #include "Royal/Log.h"
 
 //----Entry Point--------------------------------------------------------------------------------------------

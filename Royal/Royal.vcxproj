@@ -84,6 +84,7 @@
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalOptions>/MDd %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -109,6 +110,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -135,6 +137,7 @@
       <MinimalRebuild>false</MinimalRebuild>
       <StringPooling>true</StringPooling>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <AdditionalOptions>/MD %(AdditionalOptions)</AdditionalOptions>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
@@ -149,6 +152,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Royal.h" />
     <ClInclude Include="src\Royal\Application.h" />
     <ClInclude Include="src\Royal\Core.h" />
@@ -157,18 +161,21 @@
     <ClInclude Include="src\Royal\Events\Event.h" />
     <ClInclude Include="src\Royal\Events\KeyEvent.h" />
     <ClInclude Include="src\Royal\Events\MouseEvent.h" />
+    <ClInclude Include="src\Royal\Layer.h" />
+    <ClInclude Include="src\Royal\LayerStack.h" />
     <ClInclude Include="src\Royal\Log.h" />
-    <ClInclude Include="src\rlpch.h" />
     <ClInclude Include="src\Royal\Window.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
+    <ClInclude Include="src\rlpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\Royal\Application.cpp" />
+    <ClCompile Include="src\Royal\Layer.cpp" />
+    <ClCompile Include="src\Royal\LayerStack.cpp" />
     <ClCompile Include="src\Royal\Log.cpp" />
     <ClCompile Include="src\rlpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

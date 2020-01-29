@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Royal">
       <UniqueIdentifier>{2CC7090E-98DB-31BF-615D-D51ECD302EF0}</UniqueIdentifier>
     </Filter>
@@ -9,6 +15,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\Royal.h" />
     <ClInclude Include="src\Royal\Application.h">
       <Filter>Royal</Filter>
@@ -31,23 +40,36 @@
     <ClInclude Include="src\Royal\Events\MouseEvent.h">
       <Filter>Royal\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Royal\Layer.h">
+      <Filter>Royal</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Royal\LayerStack.h">
+      <Filter>Royal</Filter>
+    </ClInclude>
     <ClInclude Include="src\Royal\Log.h">
       <Filter>Royal</Filter>
     </ClInclude>
-    <ClInclude Include="src\rlpch.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\Royal\Window.h">
       <Filter>Royal</Filter>
     </ClInclude>
+    <ClInclude Include="src\rlpch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\Royal\Application.cpp">
+      <Filter>Royal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Royal\Layer.cpp">
+      <Filter>Royal</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Royal\LayerStack.cpp">
       <Filter>Royal</Filter>
     </ClCompile>
     <ClCompile Include="src\Royal\Log.cpp">
       <Filter>Royal</Filter>
     </ClCompile>
     <ClCompile Include="src\rlpch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

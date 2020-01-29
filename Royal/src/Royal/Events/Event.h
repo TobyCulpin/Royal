@@ -1,10 +1,7 @@
 #pragma once
 
-
+#include "rlpch.h"
 #include "Royal/Core.h"
-
-#include <string>
-#include <functional>
 
 namespace Royal {
 
@@ -40,8 +37,9 @@ namespace Royal {
 
 	class ROYAL_API Event
 	{
-		friend class EventDispatcher;
 	public:
+		bool Handled = false;
+
 		virtual EventType GetEventType() const = 0;
 		virtual const char* GetName() const = 0;
 		virtual int GetCategoryFlags() const = 0;
@@ -51,8 +49,6 @@ namespace Royal {
 		{
 			return GetCategoryFlags() & category;
 		}
-	protected:
-		bool m_Handled = false;
 	};
 
 	class EventDispatcher
@@ -70,7 +66,7 @@ namespace Royal {
 		{
 			if (m_Event.GetEventType() == T::GetStaticType())
 			{
-				m_Event.m_Handled = func(*(T*)&m_Event);
+				m_Event.Handled = func(*(T*)&m_Event);
 				return true;
 			}
 			return false;

@@ -5,6 +5,7 @@
 #include "Royal/Application.h"
 #include "Royal/Layer.h"
 #include "Royal/Log.h"
+#include "Royal/ImGui/ImGuiLayer.h"
 
 //----Entry Point--------------------------------------------------------------------------------------------
 

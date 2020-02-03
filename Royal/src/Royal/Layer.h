@@ -20,5 +20,4 @@ namespace Royal {
 	protected:
 		std::string m_DebugName;
 	};
-
 }

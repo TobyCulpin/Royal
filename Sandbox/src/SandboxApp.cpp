@@ -11,12 +11,12 @@ public:
 
 	void OnUpdate() override
 	{
-		RL_INFO("ExampleLayer::Update");
+		//RL_INFO("ExampleLayer::Update");
 	}
 
 	void OnEvent(Royal::Event& event) override
 	{
-		RL_TRACE("{0}", event);
+		//RL_TRACE("{0}", event);
 	}
 };
 

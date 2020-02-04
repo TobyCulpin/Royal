@@ -12,7 +12,7 @@ int main(int argc, char** argv)
 	RL_CORE_INFO("Initialized Log!");
 	RL_INFO("Initialized Log!");
 
-	printf("Royal Engine starting...");
+	RL_CORE_INFO("Royal Engine starting...");
 	auto app = Royal::CreateApplication();
 	app->Run();
 	delete app;

@@ -18,14 +18,19 @@ IncludeDir["GLFW"] = "Royal/vendor/GLFW/include"
 IncludeDir["Glad"] = "Royal/vendor/Glad/include"
 IncludeDir["ImGui"] = "Royal/vendor/imgui"
 
-include "Royal/vendor/GLFW"
-include "Royal/vendor/Glad"
-include "Royal/vendor/imgui"
+group "Dependencies"
+
+	include "Royal/vendor/GLFW"
+	include "Royal/vendor/Glad"
+	include "Royal/vendor/imgui"
+	
+group ""
 	
 project "Royal"
 	location "Royal"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "off"
 	
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -58,7 +63,6 @@ project "Royal"
 	
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 		
 		defines
@@ -70,22 +74,22 @@ project "Royal"
 		
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 	
 	filter "configurations:Debug"
 		defines "RL_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 		
 	filter "configurations:Release"
 		defines "RL_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 	filter "configurations:Dist"
 		defines "RL_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 		
 
@@ -93,6 +97,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
@@ -116,7 +121,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
 		systemversion "latest"
 
 	defines
@@ -126,15 +130,15 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "RL_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "RL_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "RL_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"

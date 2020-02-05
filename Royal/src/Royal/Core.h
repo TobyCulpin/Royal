@@ -10,6 +10,10 @@
 	#error Royal Engine only supports Windows!
 #endif
 
+#ifdef RL_DEBUG
+	#define RL_ENABLE_ASSERTS
+#endif
+
 #ifdef RL_ENABLE_ASSERTS
 	#define RL_ASSERT(x, ...) { if(!(x)) { RL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
 	#define RL_CORE_ASSERT(x, ...) { if(!(x)) { RL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }

@@ -7,3 +7,6 @@
 [submodule "Royal/vendor/imgui"]
 	path = Royal/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Royal/vendor/glm"]
+	path = Royal/vendor/glm
+	url = https://github.com/g-truc/glm

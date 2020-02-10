@@ -53,13 +53,7 @@ project "Royal"
 		"%{IncludeDir.ImGui}"
 	}
 	
-	links
-	{
-		"GLFW",
-		"Glad",
-		"ImGui",
-		"opengl32.lib"
-	}
+	
 	
 	filter "system:windows"
 		cppdialect "C++17"
@@ -76,6 +70,40 @@ project "Royal"
 		{
 			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
+		
+		links
+		{
+			"GLFW",
+			"Glad",
+			"ImGui",
+			"opengl32.lib"
+		}
+	
+	
+	filter "system:linux"
+		cppdialect "C++17"
+		systemversion "latest"
+		
+		defines
+		{
+			"RL_PLATFORM_LINUX",
+			"RL_BUILD_SO",
+			"GLFW_INCLUDE_NONE"
+		}
+		
+		postbuildcommands
+		{
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
+		}
+		
+		links
+		{
+			"GLFW",
+			"Glad",
+			"ImGui",
+			"GL"
+		}
+	
 	
 	filter "configurations:Debug"
 		defines "RL_DEBUG"
@@ -93,6 +121,7 @@ project "Royal"
 		optimize "On"
 		
 
+
 project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
@@ -106,7 +135,7 @@ project "Sandbox"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp"
- }
+	}
 
 	includedirs
 	{
@@ -122,12 +151,23 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		systemversion "latest"
-
-	defines
-	{
-		"RL_PLATFORM_WINDOWS"
-	}
-
+		
+		defines
+		{
+			"RL_PLATFORM_WINDOWS"
+		}
+		
+	
+	filter "system:linux"
+		cppdialect "C++17"
+		systemversion "latest"
+		
+		defines
+		{
+			"RL_PLATFORM_LINUX"
+		}
+		
+		
 	filter "configurations:Debug"
 		defines "RL_DEBUG"
 		runtime "Debug"
@@ -137,8 +177,12 @@ project "Sandbox"
 		defines "RL_RELEASE"
 		runtime "Release"
 		optimize "On"
-
+	
 	filter "configurations:Dist"
 		defines "RL_DIST"
 		runtime "Release"
 		optimize "On"
+	
+	
+
+	

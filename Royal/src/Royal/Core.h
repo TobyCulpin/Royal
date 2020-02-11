@@ -9,7 +9,7 @@
 #elif RL_PLATFORM_LINUX
 	#define ROYAL_API
 #else
-	#error Royal Engine only supports Windows!
+	#error Royal Engine only supports Windows and X11 Linux!
 #endif
 
 #ifdef RL_DEBUG

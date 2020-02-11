@@ -6,6 +6,8 @@
 	#else
 		#define ROYAL_API __declspec(dllimport)
 	#endif
+#elif RL_PLATFORM_LINUX
+	#define ROYAL_API
 #else
 	#error Royal Engine only supports Windows!
 #endif

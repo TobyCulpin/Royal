@@ -7,4 +7,4 @@ bin-int/
 .user
 Sandbox/imgui.ini
 
-**/.vcxproj
+*.vcxproj

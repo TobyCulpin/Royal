@@ -36,8 +36,6 @@ project "Royal"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 	
-	pchheader "rlpch.h"
-	pchsource "Royal/src/rlpch.cpp"
 	
 	files
 	{
@@ -62,7 +60,11 @@ project "Royal"
 	filter "system:windows"
 		cppdialect "C++17"
 		systemversion "latest"
-		
+	
+		pchheader "rlpch.h"
+		pchsource "Royal/src/rlpch.cpp"
+	
+
 		defines
 		{
 			"RL_PLATFORM_WINDOWS",
@@ -87,7 +89,9 @@ project "Royal"
 	filter "system:linux"
 		cppdialect "C++17"
 		systemversion "latest"
-		
+	
+		pchheader "rlpch.h"	
+
 		defines
 		{
 			"RL_PLATFORM_LINUX",

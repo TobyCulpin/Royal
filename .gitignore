@@ -8,3 +8,4 @@ Royal/vendor/**
 .user
 **.vcxproj
 Sandbox/imgui.ini
+Makefile

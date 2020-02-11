@@ -17,8 +17,13 @@
 #endif
 
 #ifdef RL_ENABLE_ASSERTS
-	#define RL_ASSERT(x, ...) { if(!(x)) { RL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
-	#define RL_CORE_ASSERT(x, ...) { if(!(x)) { RL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#if defined(RL_PLATFORM_WINDOWS)
+		#define RL_ASSERT(x, ...) { if(!(x)) { RL_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+		#define RL_CORE_ASSERT(x, ...) { if(!(x)) { RL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#elif defined(RL_PLATFORM_LINUX)
+		#define RL_ASSERT(x, ...) { if(!(x)) { RL_ERROR("Assertion Failed: {0}", __VA_ARGS__); } }
+		#define RL_CORE_ASSERT(x, ...) { if(!(x)) { RL_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); } }
+	#endif
 #else
 	#define RL_ASSERT(x, ...)
 	#define RL_CORE_ASSERT(x, ...)

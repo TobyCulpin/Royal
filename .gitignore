@@ -2,6 +2,9 @@
 .vs/
 bin/
 bin-int/
+Royal/vendor/**
 
 #Files
 .user
+**.vcxproj
+Sandbox/imgui.ini

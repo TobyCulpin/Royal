@@ -1,3 +1,5 @@
+#ifdef RL_PLATFORM_WINDOWS
+
 #include "rlpch.h"
 #include "WindowsWindow.h"
 
@@ -176,3 +178,7 @@ namespace Royal {
 	}
 
 }
+
+
+#endif // RL_PLATFORM_WINDOWS
+

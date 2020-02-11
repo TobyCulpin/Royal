@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef RL_PLATFORM_WINDOWS
+
 #include "Royal/Window.h"
 
 #include "GLFW/glfw3.h"
@@ -43,3 +45,5 @@ namespace Royal {
 	};
 
 }
+
+#endif // RL_PLATFORM_WINDOWS

@@ -26,6 +26,10 @@ group "Dependencies"
 	include "Royal/vendor/imgui"
 	
 group ""
+
+project "ImGui"
+	filter "system:linux"
+		buildoptions ("-fPIC")
 	
 project "Royal"
 	location "Royal"

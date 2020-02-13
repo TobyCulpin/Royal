@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef RL_PLATFORM_WINDOWS
+
 #include "Royal/Input.h"
 
 namespace Royal
@@ -21,3 +23,5 @@ namespace Royal
 
 	};
 }
+
+#endif // RL_PLATFORM_WINDOWS

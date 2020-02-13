@@ -1,3 +1,5 @@
+#ifdef RL_PLATFORM_WINDOWS
+
 #include "rlpch.h"
 #include "WindowsInput.h"
 
@@ -43,3 +45,5 @@ namespace Royal
 		return y;
 	}
 }
+
+#endif // RL_PLATFORM_WINDOWS

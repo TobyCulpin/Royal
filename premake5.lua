@@ -27,10 +27,17 @@ group "Dependencies"
 	
 group ""
 
+
+project "Glad"
+	filter "system:linux"
+		buildoptions ("-fPIC")
+
+
 project "ImGui"
 	filter "system:linux"
 		buildoptions ("-fPIC")
-	
+
+
 project "Royal"
 	location "Royal"
 	kind "SharedLib"

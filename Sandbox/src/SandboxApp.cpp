@@ -52,7 +52,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushLayer(new Royal::ImGuiLayer());
+		//PushLayer(new Royal::ImGuiLayer());
 	}
 
 	~Sandbox()

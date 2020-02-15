@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef RL_PLATFORM_WINDOWS
+#if defined(RL_PLATFORM_WINDOWS) || defined(RL_PLATFORM_LINUX)
 
 extern Royal::Application* Royal::CreateApplication();
 

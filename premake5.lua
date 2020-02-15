@@ -165,7 +165,8 @@ project "Sandbox"
 
 	links
 	{
-		"Royal"
+		"Royal",
+		"pthread"
 	}
 
 	filter "system:windows"

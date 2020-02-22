@@ -1,5 +1,7 @@
 #include "Royal.h"
 
+#include "imgui/imgui.h"
+
 //glm example code
 #include <glm/vec3.hpp> // glm::vec3
 #include <glm/vec4.hpp> // glm::vec4
@@ -33,6 +35,17 @@ public:
 		}
 	}
 
+	/*
+	Fix linking errors from static lib
+
+	virtual void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hello World");
+		ImGui::End();
+	}
+	*/
+
 	void OnEvent(Royal::Event& event) override
 	{
 		//RL_TRACE("{0}", event);
@@ -52,7 +65,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushLayer(new Royal::ImGuiLayer());
 	}
 
 	~Sandbox()

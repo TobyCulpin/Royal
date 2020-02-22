@@ -116,6 +116,7 @@ project "Sandbox"
 	{
 		"Royal/vendor/spdlog/include",
 		"Royal/src",
+		"Royal/vendor",
 		"%{IncludeDir.glm}"
 	}
 
